@@ -1,1 +1,271 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import "~animate.css/animate.min";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background: var(--primary-background-color) !important;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--secondary-text-color);
+}
+
+mat-option {
+  input {
+    width: 100%;
+    border: var(--input-border);
+    border-radius: calc(3 / 16 * var(--default-size-unit));
+    height: calc(30 / 16 * var(--default-size-unit));
+    padding-inline: calc(10 / 16 * var(--default-size-unit));
+  }
+}
+
+:root {
+  /* colors  */
+  --primary-background-color: #ffffff;
+  --secondary-background-color: #f9f9f9;
+  --primary-text-color: #274573;
+  --secondary-text-color: #5b636d;
+  --landing-page-nav-color: #274573;
+  --green: #17a575;
+  --white: #fff;
+  --orange: #f49300;
+  --grey: rgba(77, 87, 98, 0.4);
+  --pink: #db3d57;
+  --red: #d90505;
+  --button-hover-color: #f49300;
+  --blue: #00b4db;
+
+  /* sizes */
+  --default-size-unit: 1rem;
+  --xxs-font-size: calc(8 / 16 * 1rem);
+  --xs-font-size: calc(12 / 16 * 1rem);
+  --s-font-size: calc(14 / 16 * 1rem);
+  --m-font-size: 1rem;
+  --ml-font-size: calc(18 / 16 * 1rem);
+  --l-font-size: calc(21 / 16 * 1rem);
+  --xl-font-size: calc(24 / 16 * 1rem);
+  --xxl-font-size: calc(36 / 16 * 1rem);
+
+  /* paddings */
+  --body-padding: calc(290 / 16 * 1rem);
+  --dashboard-section-padding: calc(45 / 16 * var(--default-size-unit))
+    calc(58 / 16 * var(--default-size-unit));
+
+  /* animation delay */
+
+  --hover-animation-delay: 500ms;
+  --nav-animation-delay: 200ms;
+
+
+  --section-border: calc(1/16 * var(--default-size-unit)) solid rgba(91, 99, 109, 0.3);
+  --button-border: calc(2/16 * var(--default-size-unit)) solid var(--secondary-text-color);
+  --input-border: calc(1 / 16 * var(--default-size-unit)) solid #4d576280;
+
+  /* shadows  */
+  --card-shadow: 0 calc(3 / 16 * var(--default-size-unit))
+      calc(6 / 16 * var(--default-size-unit)) rgba(0, 0, 0, 0.06),
+    0 calc(3 / 16 * var(--default-size-unit))
+      calc(6 / 16 * var(--default-size-unit)) rgba(0, 0, 0, 0.13);
+  --nav-shadow: 0 0 calc(9 / 16 * var(--default-size-unit)) rgba(0, 0, 0, 0.25);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+.bg-fail {
+  background: var(--red);
+}
+
+.bg-success {
+  background: var(--green);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.px-0 mat-dialog-container {
+  padding: 0;
+  border-radius: 0;
+}
+
+.delete mat-dialog-container {
+  padding: 0;
+  border-radius: calc(3 / 16 * var(--default-size-unit));
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--secondary-background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+}
+
+.drop-zone {
+  border: calc(1/16 * var(--default-size-unit)) dashed var(--secondary-text-color);
+  border-radius: calc(3/16 * var(--default-size-unit));
+  background: var(--secondary-background-color);
+  height: fit-content;
+}
+
+.ngx-file-drop__content {
+  height: fit-content!important;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  color: var(--secondary-text-color);
+
+  table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    flex-grow: 1;
+    font-size: var(--s-font-size);
+
+    .description {
+      max-width: calc(242 / 16 * var(--default-size-unit));
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .actions {
+      text-align: right;
+      max-width: calc(40 / 16 * var(--default-size-unit));
+    }
+
+    thead {
+      background: #f9f9f990;
+    }
+
+    th {
+      font-size: var(--s-font-size);
+      border-bottom: var(--section-border);
+
+    }
+
+    th,
+    td {
+      padding: calc(10 / 16 * var(--default-size-unit)) 0
+        calc(10 / 16 * var(--default-size-unit))
+        calc(10 / 16 * var(--default-size-unit));
+    }
+
+    tr {
+      border-bottom: var(--section-border);
+      :last-child {
+        align-items: flex-end;
+      }
+    }
+
+    td svg {
+      margin-inline-end: calc(19 / 16 * var(--default-size-unit));
+      width: calc(24 / 16 * var(--default-size-unit));
+      margin: 0 calc(5 / 16 * var(--default-size-unit));
+      cursor: pointer;
+    }
+
+    tbody tr {
+      transition: background 0.3ms ease-in;
+      &:hover {
+        background: var(--secondary-background-color);
+      }
+    }
+
+    .info-row {
+      // cursor: url("../../../../assets/hand-pointer-light\ 2.svg"), auto;
+    }
+  }
+}
+    
+
+@media (max-width: 1919px) {
+  :root {
+    --default-size-unit: 0.8rem;
+    --xs-font-size: calc(12 / 16 * 0.8rem);
+    --s-font-size: calc(14 / 16 * 0.8rem);
+    --m-font-size: 0.8rem;
+    --ml-font-size: calc(18 / 16 * 0.8rem);
+    --l-font-size: calc(21 / 16 * 0.8rem);
+    --xl-font-size: calc(36 / 16 * 0.8rem);
+    --body-padding: calc(290 / 16 * 0.8rem);
+  }
+}
+
+@media (max-width: 1536px) {
+  :root {
+    --default-size-unit: 0.8rem;
+    --xs-font-size: calc(12 / 16 * 0.8rem);
+    --s-font-size: calc(14 / 16 * 0.8rem);
+    --m-font-size: 0.8rem;
+    --ml-font-size: calc(18 / 16 * 0.8rem);
+    --l-font-size: calc(21 / 16 * 0.8rem);
+    --xl-font-size: calc(36 / 16 * 0.8rem);
+  }
+}
+
+@media (max-width: 1400px) {
+  :root {
+    --default-size-unit: 0.8rem;
+    --xs-font-size: calc(12 / 16 * 0.8rem);
+    --s-font-size: calc(14 / 16 * 0.8rem);
+    --m-font-size: 0.8rem;
+    --ml-font-size: calc(18 / 16 * 0.8rem);
+    --l-font-size: calc(21 / 16 * 0.8rem);
+    --xl-font-size: calc(36 / 16 * 0.8rem);
+    --body-padding: 1rem;
+  }
+}
+
+/* animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateZ(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bottomToTop {
+  0% {
+    transform: translateY(calc(5/16 * var(--default-size-unit)));
+    opacity: 0;
+  }
+  50% {opacity: 1;}
+  100% {
+    opacity: 0;
+    transform: translateY(calc(-5/16 * var(--default-size-unit)));
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

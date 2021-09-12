@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  .body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      width: 100%;
+      height: calc(100vh - (80 / 16 * var(--default-size-unit)));
+      padding-inline-start: calc(80 / 16 * var(--default-size-unit));
+      padding-inline-end: calc(80 / 16 * var(--default-size-unit));
+      padding-block-start: calc(80 / 16 * var(--default-size-unit));
+      padding-block-end: calc(80 / 16 * var(--default-size-unit));
+    }
+  }
+}

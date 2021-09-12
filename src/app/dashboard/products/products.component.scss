@@ -1,0 +1,40 @@
+:host ::ng-deep {
+  .top-container {
+    .line {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding-block-end: calc(50 / 16 * var(--default-size-unit));
+
+      padding-inline-start: calc(10 / 16 * var(--default-size-unit));
+      padding-inline-end: calc(10 / 16 * var(--default-size-unit));
+      .col {
+        button {
+          height: calc(40 / 16 * var(--default-size-unit));
+          border: none;
+          background-color: #17A575;
+          color: white;
+          font-size: var(--s-font-size);
+          font-weight: bold;
+          border-radius: calc(4 / 16 * var(--default-size-unit));
+          padding-inline-start: calc(11 / 16 * var(--default-size-unit));
+          padding-inline-end: calc(11 / 16 * var(--default-size-unit));
+          cursor: pointer;
+
+          .content {
+            display: flex;
+            align-items: center;
+            svg {
+              margin-inline-end: calc(11 / 16 * var(--default-size-unit));
+            }
+          }
+        }
+
+        app-input {
+          width: calc(400 / 16 * var(--default-size-unit));
+        }
+      }
+
+    }
+  }
+}
