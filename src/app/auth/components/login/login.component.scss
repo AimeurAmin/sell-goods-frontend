@@ -1,0 +1,67 @@
+$x: 10000px;
+
+:host {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .wave {
+    width: auto;
+    height: 100%;
+  }
+
+  .logo {
+    width: auto;
+    height: 40%;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+  }
+
+  .login-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avatar {
+      width: calc(120 / 16 * var(--default-size-unit));
+      height: calc(120 / 16 * var(--default-size-unit));
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      ::ng-deep app-input {
+        width: calc(330 / 16 * var(--default-size-unit));
+        margin-block: calc(20 / 16 * var(--default-size-unit));
+      }
+
+      button {
+        border: none;
+        border-radius: calc(3 / 16 * var(--default-size-unit));
+        background-color: #3AB585;
+        color: white;
+        padding-block: calc(12 / 16 * var(--default-size-unit));
+        padding-inline: calc(24 / 16 * var(--default-size-unit));
+        margin-block-start: calc(20 / 16 * var(--default-size-unit));
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .wave {
+      display: none;
+    }
+
+    .logo {
+      display: none;
+    }
+  }
+}
